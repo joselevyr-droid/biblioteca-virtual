@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Tema</title>
+
+<style>
+
+body {
+    font-family: Arial;
+    text-align: center;
+    background-color: white;
+    color: black;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* modo escuro */
+body.dark {
+    background-color: #111;
+    color: white;
+}
+  
+.topo {
+    display: flex;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+.menu {
+    display: flex;
+}
+
+.botao {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.titulo {
+    font-size: 50px;
+    font-weight: bold;
+    margin-left: auto;
+}
+  
+.modo-area {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.botao-modo {
+    padding: 12px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+.botao-modo:hover {
+    opacity: 0.9;
+}
+  
+/* modo escuro geral */
+body.dark {
+    background-color: #111;
+    color: white;
+}
+
+/* botões verdes viram azuis no modo noturno */
+body.dark .botao {
+    background-color: #1976D2;
+}
+
+/* botão do modo também pode mudar */
+body.dark .botao-modo {
+    background-color: #1976D2;
+}
+  
+.titulo-fundo {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.grade-fundos {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 colunas */
+    gap: 20px; /* espaço entre elas */
+    max-width: 500px;
+    margin: 20px auto; /* centraliza a grade */
+}
+
+.tema-img {
+    width: 100%;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.tema-img:hover {
+    transform: scale(1.05);
+}
+  
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.3); /* escurece levemente */
+    z-index: -1;
+}
+    
+body.dark::before {
+    background: rgba(0,0,0,0.6);
+}
+  
+</style>
+</head>
+
+<body>
+
+  <div class="topo">
+    <div class="menu">
+        <a href="index.html" class="botao">Voltar</a>
+    </div>
+
+    <div class="titulo">
+        Tema
+    </div>
+</div>
+  
+  <div class="modo-area">
+    <h2>Modo Noturno/Claro</h2>
+    <button class="botao-modo" onclick="alternarModo()" id="botaoModo">
+        Ativar Modo Noturno
+    </button>
+</div>
+  
+  <h2 class="titulo-fundo">Plano de fundo</h2>
+
+<div class="grade-fundos">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwztT5ESYLEml0YFX6CXjbB9FFogagofDYDAyxr2jN4w&s=10" class="tema-img" onclick="trocarFundo('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwztT5ESYLEml0YFX6CXjbB9FFogagofDYDAyxr2jN4w&s=10')">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH0-SC2g0bHVWGKy6jqdnLBWf0umcNt94o50usebNNYg&s=10" class="tema-img" onclick="trocarFundo('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH0-SC2g0bHVWGKy6jqdnLBWf0umcNt94o50usebNNYg&s=10')">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSgUVitKYLw8JRl0kmH7hBeCfxj--j732gseO6Pdp_vQ&s=10" class="tema-img" onclick="trocarFundo('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSgUVitKYLw8JRl0kmH7hBeCfxj--j732gseO6Pdp_vQ&s=10')">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaNrdnzOvgOd3Jfcty2_8hADTRfKNcrUsluV7CQHsdeA&s=10" class="tema-img" onclick="removerFundo()">
+</div>
+  
+  <script>
+
+// aplica modo salvo ao carregar
+if (localStorage.getItem("modo") === "dark") {
+    document.body.classList.add("dark");
+    document.getElementById("botaoModo").innerText = "Desativar Modo Noturno";
+}
+
+function alternarModo() {
+    if (localStorage.getItem("modo") === "dark") {
+        localStorage.removeItem("modo");
+        document.body.classList.remove("dark");
+        document.getElementById("botaoModo").innerText = "Ativar Modo Noturno";
+    } else {
+        localStorage.setItem("modo", "dark");
+        document.body.classList.add("dark");
+        document.getElementById("botaoModo").innerText = "Desativar Modo Noturno";
+    }
+}
+
+</script>
+  
+  <script>
+
+function trocarFundo(imagem) {
+
+    document.body.style.backgroundImage = "url('" + imagem + "')";
+    localStorage.setItem("fundo", imagem);
+}
+
+function removerFundo() {
+
+    document.body.style.backgroundImage = "none";
+    localStorage.removeItem("fundo");
+}
+
+// aplica quando a página carrega
+let fundoSalvo = localStorage.getItem("fundo");
+
+if (fundoSalvo) {
+    document.body.style.backgroundImage = "url('" + fundoSalvo + "')";
+}
+
+</script>
+  
+      <script>
+window.onload = function() {
+    window.scrollTo(0, 0);
+};
+</script>
+  
+</body>
+</html>
