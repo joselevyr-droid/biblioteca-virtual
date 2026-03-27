@@ -1,0 +1,146 @@
+body {
+    font-family: Arial;
+    background-color: white;
+    background-image: url("sua-imagem.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    color: black;
+}
+.menu {
+    display: flex;
+    gap: 10px;
+}
+.botao {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+    .topo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+.botao:hover {
+    background-color: #45a049;
+}
+.titulo {
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: #222;
+}
+body.dark .titulo {
+    color: #f5f5f5;
+}
+.titulo::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: #4CAF50;
+    margin-top: 6px;
+}
+.titulo::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: #4CAF50; 
+    margin-top: 6px;
+}
+body.dark .titulo::after {
+    background: #1976D2; 
+}
+.imagem {
+    display: block;
+    margin: 20px auto;
+    width: 300px;
+    border-radius: 12px;
+}
+.botao-centro {
+    text-align: center;
+    margin-top: 20px;
+}
+.botao-grande {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #222;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.botao-grande:hover {
+    background-color: #444;
+}
+.rodape {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 14px;
+}
+body.dark {
+    background-color: #111;
+    color: white;
+}
+body.dark .botao {
+    background-color: #1976D2; 
+}
+body.dark .botao-grande {
+    background-color: gray;
+}
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.3); 
+    z-index: -1;
+}
+body.dark::before {
+    background: rgba(0,0,0,0.6);
+}
+.estante {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+@media (min-width: 800px) {
+    .estante {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+    }
+    .livro {
+        width: 250px;
+    }
+}
+.botao-premium{
+    display:inline-block;
+    padding:12px 30px;
+    background:#FFD700; 
+    color:#000;
+    text-decoration:none;
+    border-radius:10px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+}
+.botao-premium:hover{
+    background:#e6c200;
+}
+body.dark .botao-premium{
+    background:#8B7500;
+    color:white;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+<link rel="stylesheet" href="logs.css">
+</head>
+<body>
+    <a href="index.html" class="botao-voltar">← Voltar</a>
+<div class="login-container">   
+    <img src="https://cdn-icons-png.flaticon.com/512/1828/1828843.png" 
+class="botao-reset" 
+onclick="resetarDados()">
+    <div class="topo-login">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSL5ECfbpSQgG7qV_Rstvw0XK6nTSi24UihrOX7xsYhbg&s=10" id="avatar-principal" class="avatar">
+        <label for="upload-avatar" class="avatar-upload">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyFmIddWvM22FtAnnhsGyn2ddCSxm-mdsNFdriLg_I_w&s=10">
+        </label>
+        <input type="file" id="upload-avatar" accept="image/*" style="display:none">
+    </div>
+    <div class="nome-usuario-area">
+    <h1 id="nome-usuario">Usuário</h1>
+    <button id="editar-nome" class="editar-nome">Editar</button>
+</div>
+    <div class="campo-login">
+    <label for="email">Email</label>
+    <input type="email" id="email" placeholder="Digite seu email">
+</div>    
+    <div class="campo-login">
+    <label for="cpf">CPF (opcional)</label>
+    <input type="text" id="cpf" placeholder="Digite seu CPF">
+</div>
+<div class="campo-login">
+    <label for="senha">Senha</label>    
+  <div class="senha-box">
+    <input type="password" id="senha" placeholder="Digite sua senha">
+      <span id="olho" onclick="mostrarSenha()">👁️</span>
+</div>   
+</div>    
+<div class="botao-area">
+    <button id="salvar-dados" class="botao-salvar">Salvar</button>
+</div>    
+</div>  
+    <script src="logs01.js"></script>
+    <script src="logs02.js"></script>
+    <script src="logs03.js"></script>
+    <script src="logs04.js"></script>
+    <script src="logs05.js"></script>
+    <script src="logs06.js"></script>
+    <script src="logs07.js"></script>
+</body>
+</html>

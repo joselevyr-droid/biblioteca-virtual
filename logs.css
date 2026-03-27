@@ -1,0 +1,215 @@
+body {
+    display: flex;
+    justify-content: center;  
+    align-items: flex-start;  
+    min-height: 100vh;
+    margin: 0;
+    padding-top: 60px;       
+    font-family: Arial, sans-serif;
+    background-color: white;
+    background-image: url("sua-imagem.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    color: black;
+}
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.3);
+    z-index: -1;
+}
+body.dark {
+    background-color: #111;
+    color: white;
+}
+body.dark::before {
+    background: rgba(0,0,0,0.6);
+}
+.login-container {
+    width: 90%;
+    max-width: 400px;
+    padding: 40px;
+    background: rgba(255,255,255,0.9);
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    text-align: center;
+    position: relative;
+}
+body.dark .login-container {
+    background: rgba(30,30,30,0.9);
+}
+.login-container h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+@media (max-width: 500px) {
+    body {
+        padding-top: 40px;  /* um pouco menos no celular */
+    }
+    .login-container {
+        padding: 30px;
+    }
+}
+.topo-login{
+    position:relative;
+    width:120px;
+    margin:0 auto 20px auto;
+}
+.avatar{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    object-fit:cover;
+    border: 3px solid #4CAF50;
+}
+.avatar-upload{
+    position:absolute;
+    bottom:0;
+    right:0;
+    cursor:pointer;
+}
+.avatar-upload img{
+    width:35px;
+    height:35px;
+    border-radius:50%;m
+    border: 2px solid #4CAF50;
+}
+body.dark .avatar {
+    border: 3px solid #1976D2;
+}
+body.dark .avatar-upload img {
+    border: 2px solid #222;
+}
+.botao-voltar{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 8px 16px;
+    background: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    z-index: 1000;
+}
+.botao-voltar:hover{
+    background:#45a049;
+}
+body.dark .botao-voltar{
+    background:#1976D2;
+}
+.nome-usuario-area{
+    position:relative;
+    width:100%;
+    text-align:center;
+}
+#nome-usuario{
+    margin:0;
+}
+.editar-nome{
+    position:absolute;
+    right:0;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:12px;
+    padding:4px 10px;
+    border:none;
+    border-radius:6px;
+    background:#e5e5e5;   
+    color:#333;
+    cursor:pointer;
+}
+.editar-nome:hover{
+    text-decoration:underline;
+    background:#d6d6d6;
+}
+body.dark .editar-nome{
+    color:#64B5F6;
+    background:#444;
+    color:#fff;
+}
+body.dark .editar-nome:hover{
+    background:#555;
+}
+.campo-login{
+    width:100%;
+    margin-top:20px;
+    text-align:left;
+}
+.campo-login label{
+    font-size:14px;
+    font-weight:bold;
+}
+.campo-login input{
+    width:100%;
+    margin-top:6px;
+    padding:12px;
+    border-radius:8px;
+    border:1px solid #ccc;
+    font-size:16px;
+    box-sizing:border-box;
+}
+body.dark .campo-login input{
+    background:#222;
+    color:white;
+    border:1px solid #555;
+}
+.botao-area{
+    width:100%;
+    margin-top:25px;
+    text-align:center;
+}
+.botao-salvar{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    font-weight:bold;
+    background:#4CAF50;
+    color:white;
+    cursor:pointer;
+}
+.botao-salvar:hover{
+    background:#45a049;
+}
+body.dark .botao-salvar{
+    background:#1976D2;
+}
+.senha-box{
+    position: relative;
+    width: 100%;
+}
+.senha-box input{
+    width: 100%;
+    padding-right: 40px;
+}
+#olho{
+    position: absolute;
+    right: 10px;
+    top: 9px;
+    cursor: pointer;
+    font-size: 18px;
+}
+.senha-box img{
+    width: 24px;
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    cursor: pointer;
+}
+.botao-reset{
+    position:absolute;
+    top:10px;
+    right:10px;
+    width:28px;
+    cursor:pointer;
+    opacity:0.8;
+}
+.botao-reset:hover{
+    opacity:1;
+}
